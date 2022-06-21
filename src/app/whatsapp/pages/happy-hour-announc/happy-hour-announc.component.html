@@ -1,1 +1,44 @@
-<p>happy-hour-announc works!</p>
+<form>
+  <div class=row>
+      <div class=col-1>
+        <label for="urlImagen">Url Video</label>
+      </div>
+      <div class=col>
+        <input type="text" id="videoUrl" name="videoUrl" [(ngModel)]="videoUrl" class="form-control-sm" placeholder="Url Video"/>
+      </div>
+  </div>
+  
+  <div class=row>
+      <div class=col-1>
+        <label for="videocharged">Video Cargado</label>
+      </div>
+      <div class=col>
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" id="videocharged" [src]="transformSafeUrl(videoUrl)"></iframe>
+        </div>
+      </div>
+  </div>
+  
+  <div class=row>
+      <div class=col-1>
+        <label for="place">Lugar</label>
+      </div>
+      <div class=col>
+        <input type="text" id="place" name="place" [(ngModel)]="place" class="form-control-sm" placeholder="Lugar" />
+      </div>
+  </div>
+  
+  <div class=row>
+      <div class=col-1>
+        <label for="datetime">Fecha y hora</label>
+      </div>
+      <div class=col>
+        <input type="datetime-local" id="datetime" name="datetime" [(ngModel)]="dateTime">
+      </div>
+  </div>
+
+    <button type="button" class="btn btn-primary" (click)="send()">Enviar</button>
+  
+  </form>
+  
+  

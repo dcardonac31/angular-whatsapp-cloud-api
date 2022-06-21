@@ -1,1 +1,59 @@
-<p>movie-confirmation works!</p>
+<form>
+<div class=row>
+    <div class=col-1>
+      <label for="imageUrl">Url Imagen</label>
+    </div>
+    <div class=col>
+      <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="imageUrl" class="form-control-sm" placeholder="Url Imagen"/>
+    </div>
+</div>
+
+<div class=row>
+    <div class=col-1>
+      <label for="picturecharged">Imagen Cargada</label>
+    </div>
+    <div class=col>
+      <img class="medium-picture" id="picturecharged" name="picturecharged" src="{{imageUrl}}"/>
+    </div>
+</div>
+
+<div class=row>
+    <div class=col-1>
+      <label for="asientos">Pelicula</label>
+    </div>
+    <div class=col>
+      <input type="text" id="movie" name="movie" [(ngModel)]="movie" class="form-control-sm" placeholder="Pelicula" />
+    </div>
+</div>
+
+<div class=row>
+    <div class=col-1>
+      <label for="datetime">Fecha y hora</label>
+    </div>
+    <div class=col>
+      <input type="datetime-local" id="datetime" name="datetime" [(ngModel)]="dateTime">
+    </div>
+</div>
+
+<div class=row>
+    <div class=col-1>
+      <label for="asientos">Cine</label>
+    </div>
+    <div class=col>
+      <input type="text" id="cinema" name="cinema" [(ngModel)]="cinema" class="form-control-sm" placeholder="Cine" />
+    </div>
+</div>
+
+<div class=row>
+    <div class=col-1>
+      <label for="seats">Asientos</label>
+    </div>
+    <div class=col>
+      <input type="text" id="seats" name="seats" [(ngModel)]="seats" class="form-control-sm" placeholder="Asientos" />
+    </div>
+</div>
+
+  <button type="button" class="btn btn-primary" (click)="send()">Enviar</button>
+
+</form>
+

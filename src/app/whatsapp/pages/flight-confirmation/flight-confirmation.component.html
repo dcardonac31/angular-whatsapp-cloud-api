@@ -1,1 +1,63 @@
-<p>flight-confirmation works!</p>
+<form>
+  <div class=row>
+      <div class=col-1>
+        <label for="urlImagen">Url Documento</label>
+      </div>
+      <div class=col>
+        <input type="text" id="documentUrl" name="documentUrl" [(ngModel)]="documentUrl" class="form-control-sm" placeholder="Url Documento"/>
+      </div>
+  </div>
+
+  <div class=row>
+    <div class=col-1>
+      <label for="fileName">Nombre documento</label>
+    </div>
+    <div class=col>
+      <input type="text" id="fileName" name="fileName" [(ngModel)]="fileName" class="form-control-sm" placeholder="Nombre documento" />
+    </div>
+</div>
+
+  
+  <div class=row>
+      <div class=col-1>
+        <label for="videocharged">Video Cargado</label>
+      </div>
+      <div class=col>
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" id="videocharged" [src]="transformSafeUrl(documentUrl)"></iframe>
+        </div>
+      </div>
+  </div>
+  
+  <div class=row>
+      <div class=col-1>
+        <label for="origin">Origen</label>
+      </div>
+      <div class=col>
+        <input type="text" id="origin" name="origin" [(ngModel)]="origin" class="form-control-sm" placeholder="Origin" />
+      </div>
+  </div>
+
+  <div class=row>
+      <div class=col-1>
+        <label for="destination">Destino</label>
+      </div>
+      <div class=col>
+        <input type="text" id="destination" name="destination" [(ngModel)]="destination" class="form-control-sm" placeholder="Destino" />
+      </div>
+  </div>
+  
+  <div class=row>
+      <div class=col-1>
+        <label for="datetime">Fecha y hora</label>
+      </div>
+      <div class=col>
+        <input type="datetime-local" id="datetime" name="datetime" [(ngModel)]="dateTime">
+      </div>
+  </div>
+
+    <button type="button" class="btn btn-primary" (click)="send()">Enviar</button>
+  
+  </form>
+  
+  
